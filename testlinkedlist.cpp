@@ -6,6 +6,7 @@ using namespace std;
 typedef struct Data
 {
     int nilai;
+    string nama;
     Data *next;
 };
 
@@ -24,11 +25,12 @@ bool isEmpty()
     return false;
 }
 
-void tambahDataDepan(int DataBaru)
+void tambahDataDepan(int nilaiBaru, string namaBaru)
 {
     Data *baru;
     baru = new Data;
-    baru->nilai = DataBaru;
+    baru->nilai = nilaiBaru;
+    baru->nama = namaBaru;
     baru->next = NULL;
     
     if (isEmpty())
@@ -41,14 +43,14 @@ void tambahDataDepan(int DataBaru)
         baru->next = head;
         head = baru;
     }
-    cout << "Data Depan " << DataBaru << " Masuk" << endl;
+    cout << "Data Depan Nama : "<< namaBaru << " Nilai : " << nilaiBaru << " Masuk" << endl;
 }
 
-void tambahDataBelakang(int DataBaru)
+void tambahDataBelakang(int nilaiBaru)
 {
     Data *baru, *bantu;
     baru = new Data;
-    baru->nilai = DataBaru;
+    baru->nilai = nilaiBaru;
     baru->next = NULL;
     if (isEmpty())
     {
@@ -64,7 +66,7 @@ void tambahDataBelakang(int DataBaru)
         }
         bantu->next = baru;
     }
-    cout << "Data Belakang " << DataBaru << " Masuk" << endl;
+    cout << "Data Belakang " << nilaiBaru << " Masuk" << endl;
 }
 
 void hapusDepan()
@@ -165,7 +167,8 @@ int panjang()
 
 int main()
 {
-    int pil, databaru;
+    int pil, nilaiBaru;
+    string namaBaru;
     awal();
     do
     {
@@ -187,16 +190,18 @@ int main()
         switch (pil)
         {
         case 1: /* system("cls"); */
-            cout << "Masukkan Data = ";
-            cin >> databaru;
-            tambahDataDepan(databaru);
+            cout << "Masukkan Nilai = ";
+            cin >> nilaiBaru;
+            cout << "Masukkan Nama = ";
+            cin >> namaBaru;
+            tambahDataDepan(nilaiBaru, namaBaru);
             Cetak();
             cout << endl;
             break;
         case 2: /* system("cls"); */
             cout << "Masukkan Data = ";
-            cin >> databaru;
-            tambahDataBelakang(databaru);
+            cin >> nilaiBaru;
+            tambahDataBelakang(nilaiBaru);
             Cetak();
             cout << endl;
             break;

@@ -51,19 +51,19 @@ void sisip_awal_LIFO()
     }
 }
 
-void sisip_awal_FIFO(){
-    struct dtnilai *tampung, *awal;
-    int j=0;
-    char jawab[2];
+// void sisip_awal_FIFO(){
+//     struct dtnilai *tampung, *awal;
+//     int j=0;
+//     char jawab[2];
 
-    while (/* condition */)
-    {
-        /* code */
-    }
+//     while (/* condition */)
+//     {
+//         /* code */
+//     }
     
-}
+// }
 
 int main(){
     sisip_awal_LIFO();
-    sisip_awal_FIFO();
+    // sisip_awal_FIFO();
 }
